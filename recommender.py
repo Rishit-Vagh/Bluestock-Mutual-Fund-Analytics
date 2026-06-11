@@ -1,8 +1,17 @@
+"""
+Module to recommend top mutual funds based on a given risk appetite.
+"""
 import sqlite3
 import pandas as pd
 import argparse
 
 def recommend_funds(risk_appetite):
+    """
+    Query the database and print the top 3 recommended funds based on risk appetite.
+    
+    Args:
+        risk_appetite (str): The user's risk appetite ('Low', 'Moderate', 'High').
+    """
     risk_appetite = risk_appetite.capitalize()
     risk_mapping = {
         'Low': ['Low', 'Low to Moderate'],
